@@ -8,7 +8,9 @@ public class Main {
                 .build();
         Person son = mom.newChildBuilder()
                 .setName("Антошка")
+                //.setAge(3)
                 .build();
+        //son.happyBirthday();
         System.out.println("У " + mom + " есть сын, " + son);
 
         try {

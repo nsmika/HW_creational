@@ -76,7 +76,17 @@ public class Person {
 
     @Override
     public String toString() {
-        return name + " " + surname + " (" + "Полных лет: " + age + " , проживает в " + city + ")";
+        StringBuilder result = new StringBuilder();
+        result.append(name + " " + surname + " (" + "Полных лет: ");
+        if (age != 0) {
+            result.append(age + " , Проживает в: ");
+        } else
+            result.append("неизвестно, Проживает в: ");
+        if (city != null) {
+            result.append(city + ")");
+        } else
+            result.append("неизвестно)");
+        return String.valueOf(result);
     }
 
     @Override
