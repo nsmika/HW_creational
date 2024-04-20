@@ -42,17 +42,11 @@ public class Person {
         return surname;
     }
 
-    public int getAge(int age) {
-        if (!hasAge()) {
-            throw new IllegalStateException("Возраст не указан");
-        }
-        return age;
+    public OptionalInt getAge() {
+        return OptionalInt.of(age);
     }
 
     public String getAddress(String city) {
-        if (hasAddress()) {
-            throw new IllegalStateException("Адрес не указан");
-        }
         return this.city;
     }
 
