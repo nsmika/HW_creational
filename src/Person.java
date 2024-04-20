@@ -43,10 +43,16 @@ public class Person {
     }
 
     public OptionalInt getAge() {
+        if (!hasAge()) {
+            return OptionalInt.empty();
+        }
         return OptionalInt.of(age);
     }
 
     public String getAddress(String city) {
+        if (hasAddress()) {
+            return "Адрес не указан";
+        }
         return this.city;
     }
 
